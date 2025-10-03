@@ -1,2 +1,105 @@
-# brendanhenrique.github.io
-Academic Portfolio
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brendan Henrique | Portfolio</title>
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Use the Inter font family defined above */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Simple fade-in animation for the content */
+        .fade-in {
+            animation: fadeInAnimation ease 2s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+        @keyframes fadeInAnimation {
+            0% {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Main container taking the full screen height -->
+    <div class="flex flex-col items-center justify-center min-h-screen p-6 md:p-10">
+        
+        <!-- Content container with fade-in animation -->
+        <main class="w-full max-w-2xl mx-auto text-center fade-in">
+
+            <!-- Profile Image -->
+            <div class="mb-6">
+                <!-- Placeholder image - Replace with your own! -->
+                <img src="https://placehold.co/128x128/e2e8f0/334155?text=BH" 
+                     alt="Brendan Henrique" 
+                     class="w-32 h-32 rounded-full mx-auto shadow-lg">
+            </div>
+
+            <!-- Name Heading -->
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 tracking-tight">
+                Brendan Henrique
+            </h1>
+
+            <!-- Subtitle/Tagline -->
+            <p class="mt-4 text-lg md:text-xl text-gray-600">
+                Data Scientist | Researcher | Lifelong Learner
+            </p>
+            
+            <!-- Short Bio/Introduction -->
+            <p class="mt-6 max-w-xl mx-auto text-base text-gray-700">
+                Welcome to my personal page. I'm passionate about leveraging data to solve complex problems and build impactful solutions. Explore my work and feel free to get in touch.
+            </p>
+
+            <!-- Social & Professional Links -->
+            <div class="mt-8 flex items-center justify-center space-x-5">
+                
+                <!-- GitHub Link -->
+                <a href="https://github.com/your-username" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-gray-900 transition-colors duration-300">
+                    <span class="sr-only">GitHub</span>
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.378.203 2.398.1 2.65.64.7 1.028 1.595 1.028 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+                
+                <!-- LinkedIn Link -->
+                <a href="https://linkedin.com/in/your-username" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-blue-700 transition-colors duration-300">
+                    <span class="sr-only">LinkedIn</span>
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                    </svg>
+                </a>
+
+                <!-- CV/Document Link -->
+                <a href="#" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-green-600 transition-colors duration-300">
+                    <span class="sr-only">Curriculum Vitae</span>
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                    </svg>
+                </a>
+            </div>
+
+        </main>
+        
+        <!-- Footer -->
+        <footer class="absolute bottom-6 text-center text-sm text-gray-500">
+            <p>&copy; 2025 Brendan Henrique. All rights reserved.</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
