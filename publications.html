@@ -4,53 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Publications | Brendan Henrique</title>
-    <!-- Tailwind CSS for styling -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
+        body { font-family: 'Inter', sans-serif; }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
 
     <!-- Navigation Bar -->
-    <nav class="bg-white/80 backdrop-blur-md sticky top-0 z-10 shadow-sm">
-        <div class="max-w-4xl mx-auto px-6 py-3">
-            <div class="flex justify-between items-center">
+    <nav class="bg-white/90 backdrop-blur-md sticky top-0 z-10 border-b border-gray-200">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="flex justify-between items-center h-16">
+                <!-- Site Name -->
                 <a href="index.html" class="text-lg font-bold text-gray-900">Brendan Henrique</a>
-                <a href="index.html" class="text-gray-600 hover:text-gray-900 transition-colors duration-300">Home</a>
+                <!-- Page Tabs -->
+                <div class="hidden sm:flex items-center space-x-6 text-gray-600">
+                    <a href="index.html" class="hover:text-gray-900 transition-colors">Home</a>
+                    <a href="publications.html" class="font-semibold text-gray-900">Publications</a>
+                    <a href="cv.html" class="hover:text-gray-900 transition-colors">CV</a>
+                    <a href="about.html" class="hover:text-gray-900 transition-colors">About Me</a>
+                </div>
             </div>
         </div>
     </nav>
 
     <!-- Main Publications Content -->
     <main class="max-w-4xl mx-auto p-6 md:p-10">
-        
-        <!-- Section 1 -->
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight mb-8">Peer-reviewed Conference Papers and Presentations</h2>
-        <div class="space-y-4">
-            <!-- APA Formatted Entry -->
-            <p class="text-gray-700 leading-relaxed">
-                Henrique, B. (2024). <i>Exploring K-12 Teachers' Trajectories of Engagement with Critically Conscious Computing</i>. Proceedings of the 55th ACM Technical Symposium on Computer Science Education.
-            </p>
-            <!-- You can add more conference paper entries here -->
+        <div class="space-y-12">
+            <!-- Section 1 -->
+            <section>
+                <h2 class="text-3xl font-bold text-gray-900 tracking-tight mb-6">Peer-reviewed Journal Papers</h2>
+                <div class="space-y-4">
+                    <p class="text-gray-700 leading-relaxed">
+                        Henrique, B., Roberto, C., & Wilkerson, M. H. (2023). Who creates our computational worlds? A review of Critically Conscious Computing: Methods for secondary education. <i>International Journal of Child-Computer Interaction, 35</i>, 100546.
+                    </p>
+                </div>
+            </section>
+            
+            <!-- Section 2 -->
+            <section>
+                <h2 class="text-3xl font-bold text-gray-900 tracking-tight mb-6">Peer-reviewed Conference Papers and Presentations</h2>
+                <div class="space-y-4">
+                    <p class="text-gray-700 leading-relaxed">
+                        Henrique, B. (2024). <i>Exploring K-12 Teachers' Trajectories of Engagement with Critically Conscious Computing</i>. Proceedings of the 55th ACM Technical Symposium on Computer Science Education.
+                    </p>
+                </div>
+            </section>
         </div>
-
-        <!-- Section 2 -->
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight mt-12 pt-8 border-t border-gray-200 mb-8">Peer-reviewed Journal Papers</h2>
-        <div class="space-y-4">
-             <!-- APA Formatted Entry -->
-             <p class="text-gray-700 leading-relaxed">
-                Henrique, B., Roberto, C., & Wilkerson, M. H. (2023). Who creates our computational worlds? A review of Critically Conscious Computing: Methods for secondary education. <i>International Journal of Child-Computer Interaction, 35</i>, 100546.
-             </p>
-            <!-- You can add more journal paper entries here -->
-        </div>
-
     </main>
     
     <!-- Footer -->
