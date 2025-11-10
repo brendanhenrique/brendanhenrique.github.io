@@ -5,14 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brendan Henrique | Portfolio</title>
     
-    <!-- === Social Preview Meta Tags === -->
     <meta property="og:title" content="Brendan Henrique | Academic Portfolio">
     <meta property="og:description" content="PhD Student in Critical CS Education and Learning Sciences at UC Berkeley.">
     <meta property="og:image" content="https://placehold.co/1200x630/003262/FFFFFF?text=Brendan+Henrique">
-    <meta property="og:url" content="http://brendanhenrique.com"> <!-- Replace with your actual domain -->
-    <meta name="twitter:card" content="summary_large_image">
-    <!-- === End Social Preview Meta Tags === -->
-
+    <meta property="og:url" content="http://brendanhenrique.com"> <meta name="twitter:card" content="summary_large_image">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,7 +19,6 @@
 </head>
 <body class="bg-gray-50 text-gray-800">
 
-    <!-- === NAVBAR === -->
     <nav class="bg-white/90 backdrop-blur-md sticky top-0 z-10 border-b border-gray-200">
         <div class="max-w-4xl mx-auto px-6">
             <div class="flex justify-between items-center h-16">
@@ -39,7 +34,6 @@
         </div>
     </nav>
 
-    <!-- === MAIN CONTENT === -->
     <main class="w-full max-w-2xl mx-auto text-center py-20 md:py-32 px-6">
         
         <div class="mb-6">
@@ -57,7 +51,6 @@
             Brendan is a PhD student at the Computing, Reasoning, and Expression Lab at the Berkeley School of Education and is advised by Michelle Wilkerson. His research focuses on critical approaches to computing education as well as the intersection of computing and STEM education. He was a science teacher in West Contra Costa Unified School District. He holds a M.A. in Urban Education from Loyola Marymount University and a B.A. in Cognitive Science from the University of California, Berkeley.
         </p>
 
-        <!-- === SOCIAL LINKS === -->
         <div class="mt-8 flex items-center justify-center space-x-5">
             <a href="https://scholar.google.com/citations?user=TiRFPoMAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:opacity-75 transition-opacity duration-300" title="Google Scholar">
                 <span class="sr-only">Google Scholar</span>
@@ -82,12 +75,17 @@
             </a>
         </div>
 
-        <!-- === RECENT NEWS === -->
-    <section class="mt-16 text-left border-t border-gray-200 pt-10">
+        <section class="mt-16 text-left border-t border-gray-200 pt-10">
         <h2 class="text-2xl font-bold text-[#003262] mb-6">Recent News</h2>
         <ul class="space-y-6">
 
-            <!-- New news item -->
+            <li class="grid sm:grid-cols-[8rem_1fr] gap-4 sm:gap-6">
+                <span class="text-sm font-medium text-gray-500 whitespace-nowrap">November 2025</span>
+                <p class="text-gray-700">
+                    My co-authored poster submission "A Statewide Analysis of Ethics and Social Impact in the CS Teacher Preparation Pipeline" was accepted to SIGCSE 2026.
+                </p>
+            </li>
+
             <li class="grid sm:grid-cols-[8rem_1fr] gap-4 sm:gap-6">
                 <span class="text-sm font-medium text-gray-500 whitespace-nowrap">November 2025</span>
                 <p class="text-gray-700">
@@ -95,7 +93,6 @@
                 </p>
             </li>
 
-            <!-- Example news item -->
             <li class="grid sm:grid-cols-[8rem_1fr] gap-4 sm:gap-6">
                 <span class="text-sm font-medium text-gray-500 whitespace-nowrap">June 2024</span>
                 <p class="text-gray-700">
@@ -110,7 +107,6 @@
                 </p>
             </li>
 
-            <!-- Restored news item -->
             <li class="grid sm:grid-cols-[8rem_1fr] gap-4 sm:gap-6">
                 <span class="text-sm font-medium text-gray-500 whitespace-nowrap">March 2025</span>
                 <p class="text-gray-700">
@@ -120,11 +116,8 @@
 
         </ul>
     </section>
-    <!-- === END RECENT NEWS === -->
+    </main>
 
-</main>
-
-    <!-- === FOOTER === -->
     <footer class="text-center py-10 text-sm text-gray-500">
         <p>&copy; 2025 Brendan Henrique. All rights reserved.</p>
     </footer>
