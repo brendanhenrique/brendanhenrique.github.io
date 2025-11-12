@@ -29,6 +29,7 @@
                     <a href="cv.html" class="hover:text-[#003262] transition-colors">CV</a>
                     <a href="teaching.html" class="hover:text-[#003262] transition-colors">Teaching</a>
                     <a href="about.html" class="hover:text-[#003262] transition-colors">About Me</a>
+                    <a href="news.html" class="hover:text-[#003262] transition-colors">News</a>
                 </div>
             </div>
         </div>
@@ -76,51 +77,61 @@
         </div>
 
         <section class="mt-16 text-left border-t border-gray-200 pt-10">
-        <h2 class="text-2xl font-bold text-[#003262] mb-6">Recent News</h2>
-        <ul class="space-y-6">
+            <h2 class="text-2xl font-bold text-[#003262] mb-6">Recent News</h2>
+            
+            <ul id="recent-news-placeholder" class="space-y-6">
+                <li class="text-gray-500">Loading recent news...</li>
+            </ul>
 
-            <li class="grid sm:grid-cols-[8rem_1fr] gap-4 sm:gap-6">
-                <span class="text-sm font-medium text-gray-500 whitespace-nowrap">November 2025</span>
-                <p class="text-gray-700">
-                    My co-authored poster submission "A Statewide Analysis of Ethics and Social Impact in the CS Teacher Preparation Pipeline" was accepted to SIGCSE 2026.
-                </p>
-            </li>
-
-            <li class="grid sm:grid-cols-[8rem_1fr] gap-4 sm:gap-6">
-                <span class="text-sm font-medium text-gray-500 whitespace-nowrap">November 2025</span>
-                <p class="text-gray-700">
-                    My submission "Designated Identity Narratives: Teacher Philosophy Statements in Critical CS Education" was accepted to AERA2026.
-                </p>
-            </li>
-
-            <li class="grid sm:grid-cols-[8rem_1fr] gap-4 sm:gap-6">
-                <span class="text-sm font-medium text-gray-500 whitespace-nowrap">March 2025</span>
-                <p class="text-gray-700">
-                    Presented my paper "Exploring Critical CS Teacher Education Program Design Through a Science and Technology Studies Approach" at SIGCSE in Pittsburgh.
-                </p>
-            </li>
-
-            <li class="grid sm:grid-cols-[8rem_1fr] gap-4 sm:gap-6">
-                <span class="text-sm font-medium text-gray-500 whitespace-nowrap">June 2024</span>
-                <p class="text-gray-700">
-                    Presented my paper, “An act of a revolution”: Critical Learning Trajectories in a Pre-service Teacher Computer Science Course, at the International Society of Learning Sciences (ICLS) in Buffalo, NY.
-                </p>
-            </li>
-
-            <li class="grid sm:grid-cols-[8rem_1fr] gap-4 sm:gap-6">
-                <span class="text-sm font-medium text-gray-500 whitespace-nowrap">April 2024</span>
-                <p class="text-gray-700">
-                    Won <strong>First Place in the Graduate Student Research Competition</strong> at the SIGCSE Symposium for my work on K-12 teachers' engagement with Critically Conscious Computing.
-                </p>
-            </li>
-
-        </ul>
-    </section>
-    </main>
+            <a href="news.html" class="inline-block mt-8 font-medium text-[#003262] hover:text-[#FDB515] transition-colors">
+                View all news...
+            </a>
+        </section>
+        </main>
 
     <footer class="text-center py-10 text-sm text-gray-500">
         <p>&copy; 2025 Brendan Henrique. All rights reserved.</p>
     </footer>
 
-</body>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Go fetch the new 'news.html' page
+            fetch('news.html')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.text();
+                })
+                .then(html => {
+                    const doc = new DOMParser().parseFromString(html, 'text/html');
+                    
+                    // This is the CRITICAL part.
+                    // On news.html, each post MUST have the class "news-item"
+                    const allNewsItems = doc.querySelectorAll('.news-item');
+                    const placeholder = document.getElementById('recent-news-placeholder');
+                    
+                    placeholder.innerHTML = ""; // Clear the "Loading..." text
+
+                    if (allNewsItems.length === 0) {
+                        placeholder.innerHTML = '<li class="text-gray-500">No news items found.</li>';
+                        return;
+                    }
+
+                    // Loop through and show the first 3 items
+                    const itemsToShow = Math.min(allNewsItems.length, 3);
+                    for (let i = 0; i < itemsToShow; i++) {
+                        // We clone the item so it stays on the news page too
+                        placeholder.appendChild(allNewsItems[i].cloneNode(true));
+                    }
+                })
+                .catch(error => {
+                    // This will show if the 'news.html' file is missing or has an error
+                    console.error('Error fetching news:', error);
+                    const placeholder = document.getElementById('recent-news-placeholder');
+                    placeholder.innerHTML = '<li class="text-gray-500">Could not load recent news.</li>';
+                });
+        });
+    </script>
+    </body>
 </html>
