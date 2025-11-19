@@ -4,29 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brendan Henrique | Portfolio</title>
-    
+
+    <!-- Social Cards -->
     <meta property="og:title" content="Brendan Henrique | Academic Portfolio">
     <meta property="og:description" content="PhD Student in Critical CS Education and Learning Sciences at UC Berkeley.">
     <meta property="og:image" content="https://placehold.co/1200x630/003262/FFFFFF?text=Brendan+Henrique">
-    <meta property="og:url" content="http://brendanhenrique.com"> <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:url" content="http://brendanhenrique.com">
+    <meta name="twitter:card" content="summary_large_image">
+
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; }
     </style>
-    
+
+    <!-- Analytics -->
     <script data-goatcounter="https://brendanhenrique.goatcounter.com/count"
             async src="//gc.zgo.at/count.js"></script>
-
 </head>
+
 <body class="bg-gray-50 text-gray-800">
 
+    <!-- NAV -->
     <nav class="bg-white/90 backdrop-blur-md sticky top-0 z-10 border-b border-gray-200">
         <div class="max-w-5xl mx-auto px-6">
             <div class="flex justify-between items-center h-16">
                 <a href="index.html" class="text-lg font-bold text-[#003262]">Brendan Henrique</a>
+
                 <div class="hidden sm:flex items-center space-x-6 text-gray-600">
                     <a href="index.html" class="font-semibold text-[#003262]">Home</a>
                     <a href="publications.html" class="hover:text-[#003262] transition-colors">Publications</a>
@@ -39,37 +47,49 @@
         </div>
     </nav>
 
+    <!-- MAIN -->
     <main class="w-full max-w-5xl mx-auto py-20 md:py-32 px-6">
-        
-        <div class="grid grid-cols-1 md:grid-cols-5 gap-12">
-            
-            <div class="md:col-span-3">
-                
+
+        <!-- Cleaned, stable 3/2 layout using flex -->
+        <div class="flex flex-col md:flex-row md:space-x-12 space-y-12 md:space-y-0">
+
+            <!-- LEFT COLUMN -->
+            <div class="md:w-3/5">
                 <div class="flex flex-col sm:flex-row items-center gap-6 text-center sm:text-left">
                     <img src="https://placehold.co/128x128/e2e8f0/334155?text=BH" 
-                         alt="Brendan Henrique" 
+                         alt="Brendan Henrique"
                          class="w-32 h-32 rounded-full shadow-lg flex-shrink-0">
+
                     <div>
-                        <h1 class="text-4xl md:text-5xl font-bold text-[#003262] tracking-tight">Brendan Henrique</h1>
+                        <h1 class="text-4xl md:text-5xl font-bold text-[#003262] tracking-tight">
+                            Brendan Henrique
+                        </h1>
                         <p class="mt-4 text-lg md:text-xl text-gray-600">
                             Critical CS Education and Learning Sciences | UC Berkeley
                         </p>
                     </div>
                 </div>
 
-                <p class="mt-8 text-base text-gray-700 text-left">
+                <p class="mt-8 leading-relaxed text-gray-700">
                     Brendan is a PhD student at the Computing, Reasoning, and Expression Lab at the Berkeley School of Education and is advised by Michelle Wilkerson. His research focuses on critical approaches to computing education as well as the intersection of computing and STEM education. He was a science teacher in West Contra Costa Unified School District. He holds a M.A. in Urban Education from Loyola Marymount University and a B.A. in Cognitive Science from the University of California, Berkeley.
                 </p>
 
                 <div class="mt-8 flex items-center space-x-5">
-                    <a href="https://scholar.google.com/citations?user=TiRFPoMAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:opacity-75 transition-opacity duration-300" title="Google Scholar">
+
+                    <!-- Google Scholar -->
+                    <a href="https://scholar.google.com/citations?user=TiRFPoMAAAAJ&hl=en&oi=ao"
+                       target="_blank" rel="noopener noreferrer"
+                       class="text-gray-500 hover:opacity-75 transition-opacity duration-300">
                         <span class="sr-only">Google Scholar</span>
-                        <img src="google-scholar-logo.png" alt="Google Scholar Logo" class="w-8 h-8">
+                        <img src="google-scholar-logo.png" class="w-8 h-8" alt="Google Scholar">
                     </a>
-        
-                    <a href="https://www.linkedin.com/in/brendanhenrique/" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-[#FDB515] transition-colors duration-300" title="LinkedIn">
+
+                    <!-- LinkedIn -->
+                    <a href="https://www.linkedin.com/in/brendanhenrique/"
+                       target="_blank" rel="noopener noreferrer"
+                       class="text-gray-500 hover:text-[#FDB515] transition-colors duration-300">
                         <span class="sr-only">LinkedIn</span>
-                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 
                             2.239 5 5 5h14c2.762 0 5-2.239 
                             5-5v-14c0-2.761-2.238-5-5-5zm-11 
@@ -86,16 +106,18 @@
                 </div>
             </div>
 
-            <div class="md:col-span-2">
-                <section class="text-left">
+            <!-- RIGHT COLUMN (Recent News) -->
+            <div class="md:w-2/5">
+                <section>
                     <h2 class="text-2xl font-bold text-[#003262] mb-6">Recent News</h2>
-                    
+
                     <ul id="recent-news-placeholder" class="space-y-6">
                         <li class="text-gray-500">Loading recent news...</li>
                     </ul>
-        
-                    <a href="news.html" class="inline-block mt-8 font-medium text-[#003262] hover:text-[#FDB515] transition-colors">
-                        View all news...
+
+                    <a href="news.html"
+                       class="inline-block mt-8 font-medium text-[#003262] hover:text-[#FDB515] transition-colors">
+                       View all news...
                     </a>
                 </section>
             </div>
@@ -103,40 +125,43 @@
         </div>
     </main>
 
+    <!-- FOOTER -->
     <footer class="text-center py-10 text-sm text-gray-500">
         <p>&copy; 2025 Brendan Henrique. All rights reserved.</p>
     </footer>
 
+    <!-- NEWS LOADER (rewritten + stable) -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             fetch('news.html')
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                    return response.text();
-                })
+                .then(r => r.text())
                 .then(html => {
                     const doc = new DOMParser().parseFromString(html, 'text/html');
-                    const allNewsItems = doc.querySelectorAll('.news-item');
+                    const newsItems = [...doc.querySelectorAll('.news-item')];
                     const placeholder = document.getElementById('recent-news-placeholder');
-                    
-                    placeholder.innerHTML = ""; 
 
-                    if (allNewsItems.length === 0) {
+                    placeholder.innerHTML = "";
+
+                    if (newsItems.length === 0) {
                         placeholder.innerHTML = '<li class="text-gray-500">No news items found.</li>';
                         return;
                     }
 
-                    const itemsToShow = Math.min(allNewsItems.length, 3);
-                    for (let i = 0; i < itemsToShow; i++) {
-                        placeholder.appendChild(allNewsItems[i].cloneNode(true));
-                    }
+                    newsItems.slice(0, 3).forEach(item => {
+                        const li = document.createElement('li');
+                        li.className = "space-y-2";
+
+                        li.innerHTML = `
+                            <p class="text-sm text-gray-500">${item.querySelector('.news-date')?.innerText || ''}</p>
+                            <p class="text-base leading-relaxed">${item.querySelector('.news-text')?.innerHTML || item.innerHTML}</p>
+                        `;
+
+                        placeholder.appendChild(li);
+                    });
                 })
-                .catch(error => {
-                    console.error('Error fetching news:', error);
-                    const placeholder = document.getElementById('recent-news-placeholder');
-                    placeholder.innerHTML = '<li class="text-gray-500">Could not load recent news.</li>';
+                .catch(() => {
+                    document.getElementById('recent-news-placeholder').innerHTML =
+                        '<li class="text-gray-500">Could not load recent news.</li>';
                 });
         });
     </script>
