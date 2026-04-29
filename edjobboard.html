@@ -222,6 +222,8 @@
                     ${job.start_date ? `<div><p class="text-gray-400 uppercase tracking-wide text-[10px] font-semibold">Start</p><p class="font-medium text-gray-700 mt-0.5">${job.start_date}</p></div>` : ''}
                 </div>
 
+                ${job.description ? `<p class="text-gray-600 leading-relaxed">${job.description}</p>` : ''}
+
                 ${materials ? `<div>
                     <p class="text-gray-400 uppercase tracking-wide text-[10px] font-semibold mb-1">Application Materials</p>
                     ${materials}
