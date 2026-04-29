@@ -1,0 +1,55 @@
+[
+  {
+    "id": "jhu-nrcae-postdoc-2026",
+    "title": "Postdoctoral Fellow - NRCAE",
+    "institution": "Johns Hopkins University",
+    "department": "School of Education",
+    "institution_type": "R1",
+    "track_type": "Postdoc",
+    "location": {
+      "city": "Baltimore",
+      "state": "MD"
+    },
+    "salary": {
+      "min": 63480,
+      "max": 77076,
+      "currency": "USD",
+      "period": "annual"
+    },
+    "open_date": "2026-04-28",
+    "start_date": "Fall 2026",
+    "deadline": null,
+    "apply_url": "https://dossier.interfolio.com/apply/185592",
+    "application_materials": ["Research interest proposal", "Letters of recommendation"]
+  },
+  {
+    "id": "cu-boulder-ics-asst-prof-2026",
+    "title": "Assistant Professor in Cognitive Science, AI & the Mind",
+    "institution": "University of Colorado Boulder",
+    "department": "Institute of Cognitive Science",
+    "institution_type": "R1",
+    "track_type": "Assistant Professor (Tenure Track)",
+    "location": {
+      "city": "Boulder",
+      "state": "CO"
+    },
+    "salary": {
+      "min": 85000,
+      "max": 140000,
+      "currency": "USD",
+      "period": "annual"
+    },
+    "open_date": "2026-04-17",
+    "start_date": "Fall 2027",
+    "deadline": "2026-06-30",
+    "apply_url": "https://jobs.colorado.edu/jobs/JobDetail/?jobId=71179",
+    "application_materials": [
+      "Curriculum vitae",
+      "Cover letter",
+      "Statement of research",
+      "Statement of teaching philosophy and experience",
+      "Three publications demonstrating research focus (combined PDF)",
+      "Three references (names and contact info; letters requested if advanced)"
+    ]
+  }
+]

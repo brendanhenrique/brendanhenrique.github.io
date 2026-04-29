@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ed Job Board | Brendan Henrique</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .badge { display: inline-flex; align-items: center; padding: 2px 10px; border-radius: 9999px; font-size: 0.75rem; font-weight: 600; }
+    </style>
+
+    <script data-goatcounter="https://brendanhenrique.goatcounter.com/count"
+            async src="//gc.zgo.at/count.js"></script>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <nav class="bg-white/90 backdrop-blur-md sticky top-0 z-10 border-b border-gray-200">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="flex justify-between items-center h-16">
+                <a href="index.html" class="text-lg font-bold text-[#003262]">Brendan Henrique</a>
+
+                <div class="hidden sm:flex items-center space-x-6 text-gray-600">
+                    <a href="index.html" class="hover:text-[#003262] transition-colors">Home</a>
+                    <a href="publications.html" class="hover:text-[#003262] transition-colors">Publications</a>
+                    <a href="cv.html" class="hover:text-[#003262] transition-colors">CV</a>
+                    <a href="teaching.html" class="hover:text-[#003262] transition-colors">Teaching</a>
+                    <a href="about.html" class="hover:text-[#003262] transition-colors">About Me</a>
+                    <a href="news.html" class="hover:text-[#003262] transition-colors">News</a>
+                    <a href="edjobboard.html" class="font-semibold text-[#003262]">Job Board</a>
+                </div>
+
+                <div class="sm:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-600 hover:text-[#003262] focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden sm:hidden bg-white border-b border-gray-200 absolute w-full shadow-lg">
+            <div class="px-6 pt-2 pb-4 space-y-3 shadow-sm">
+                <a href="index.html" class="block text-gray-600 hover:text-[#003262] transition-colors">Home</a>
+                <a href="publications.html" class="block text-gray-600 hover:text-[#003262] transition-colors">Publications</a>
+                <a href="cv.html" class="block text-gray-600 hover:text-[#003262] transition-colors">CV</a>
+                <a href="teaching.html" class="block text-gray-600 hover:text-[#003262] transition-colors">Teaching</a>
+                <a href="about.html" class="block text-gray-600 hover:text-[#003262] transition-colors">About Me</a>
+                <a href="news.html" class="block text-gray-600 hover:text-[#003262] transition-colors">News</a>
+                <a href="edjobboard.html" class="block font-semibold text-[#003262]">Job Board</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-5xl mx-auto px-6 py-12">
+
+        <div class="mb-8">
+            <h1 class="text-3xl font-bold text-[#003262]">Ed Job Board</h1>
+            <p class="mt-2 text-gray-500 text-sm">Education faculty and postdoc positions I'm tracking. Updated as I find new listings.</p>
+        </div>
+
+        <!-- Filters & Stats -->
+        <div class="flex flex-col sm:flex-row sm:items-center gap-3 mb-6">
+            <div class="flex flex-wrap gap-2 flex-1">
+                <select id="filter-track" class="text-sm border border-gray-200 rounded-lg px-3 py-2 bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#003262]/30">
+                    <option value="">All Track Types</option>
+                    <option value="Postdoc">Postdoc</option>
+                    <option value="Assistant Professor (Tenure Track)">Asst. Professor (TT)</option>
+                    <option value="Open Rank (Tenure Track)">Open Rank (TT)</option>
+                </select>
+
+                <select id="filter-inst-type" class="text-sm border border-gray-200 rounded-lg px-3 py-2 bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#003262]/30">
+                    <option value="">All Institution Types</option>
+                    <option value="R1">R1</option>
+                    <option value="R2">R2</option>
+                    <option value="R3">R3</option>
+                    <option value="SLAC">SLAC</option>
+                    <option value="M1">M1</option>
+                    <option value="M2">M2</option>
+                    <option value="M3">M3</option>
+                    <option value="CC">Community College</option>
+                    <option value="HBCU">HBCU</option>
+                    <option value="HSI">HSI</option>
+                    <option value="Think Tank">Think Tank</option>
+                    <option value="Government">Government</option>
+                    <option value="Industry">Industry</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <button id="btn-clear" class="text-sm text-gray-400 hover:text-gray-600 px-2 py-2 transition-colors">Clear filters</button>
+            </div>
+
+            <p id="job-count" class="text-sm text-gray-400 whitespace-nowrap"></p>
+        </div>
+
+        <!-- Cards Grid -->
+        <div id="job-grid" class="grid gap-5 sm:grid-cols-2">
+            <!-- Populated by JS -->
+        </div>
+
+        <div id="empty-state" class="hidden text-center py-16 text-gray-400">
+            <p class="text-lg font-medium">No listings match your filters.</p>
+            <p class="mt-1 text-sm">Try clearing the filters above.</p>
+        </div>
+
+        <div id="loading-state" class="text-center py-16 text-gray-400">
+            <p class="text-sm">Loading listings&hellip;</p>
+        </div>
+
+    </main>
+
+    <footer class="text-center py-10 text-sm text-gray-500">
+        <p>&copy; 2026 Brendan Henrique. All rights reserved.</p>
+    </footer>
+
+    <script src="nav.js"></script>
+
+    <script>
+    const TRACK_COLORS = {
+        'Postdoc': 'bg-blue-100 text-blue-800',
+        'Assistant Professor (Tenure Track)': 'bg-emerald-100 text-emerald-800',
+        'Open Rank (Tenure Track)': 'bg-purple-100 text-purple-800',
+    };
+
+    const INST_COLORS = {
+        'R1': 'bg-[#003262] text-white',
+        'R2': 'bg-[#005A9C] text-white',
+        'R3': 'bg-[#0070C0] text-white',
+        'SLAC': 'bg-teal-700 text-white',
+        'M1': 'bg-slate-600 text-white',
+        'M2': 'bg-slate-500 text-white',
+        'M3': 'bg-slate-400 text-white',
+        'CC': 'bg-orange-600 text-white',
+        'HBCU': 'bg-amber-700 text-white',
+        'HSI': 'bg-green-700 text-white',
+        'Think Tank': 'bg-indigo-600 text-white',
+        'Government': 'bg-red-700 text-white',
+        'Industry': 'bg-gray-700 text-white',
+        'Other': 'bg-gray-500 text-white',
+    };
+
+    function fmt(n) {
+        return n != null ? '$' + Number(n).toLocaleString('en-US') : null;
+    }
+
+    function fmtDate(d) {
+        if (!d) return null;
+        const [y, m, day] = d.split('-');
+        const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+        return `${months[+m - 1]} ${+day}, ${y}`;
+    }
+
+    function salaryLine(sal) {
+        if (!sal) return null;
+        const lo = fmt(sal.min);
+        const hi = fmt(sal.max);
+        const period = sal.period === 'annual' ? '/yr' : sal.period ? `/${sal.period}` : '';
+        if (lo && hi) return `${lo} – ${hi}${period}`;
+        if (lo) return `${lo}+${period}`;
+        return null;
+    }
+
+    function locationLine(loc) {
+        if (!loc) return null;
+        if (loc.city && loc.state) return `${loc.city}, ${loc.state}`;
+        return loc.city || loc.state || null;
+    }
+
+    function buildCard(job) {
+        const trackCls = TRACK_COLORS[job.track_type] || 'bg-gray-100 text-gray-700';
+        const instCls  = INST_COLORS[job.institution_type] || 'bg-gray-700 text-white';
+
+        const salary   = salaryLine(job.salary);
+        const location = locationLine(job.location);
+        const deadline = job.deadline ? fmtDate(job.deadline) : 'Rolling';
+        const openDate = job.open_date ? fmtDate(job.open_date) : null;
+
+        const materials = Array.isArray(job.application_materials) && job.application_materials.length
+            ? `<ul class="mt-1 space-y-0.5">${job.application_materials.map(m => `<li class="flex items-start gap-1.5"><span class="mt-1 w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0"></span><span>${m}</span></li>`).join('')}</ul>`
+            : null;
+
+        return `
+        <div class="bg-white rounded-2xl border border-gray-200 shadow-sm flex flex-col overflow-hidden hover:shadow-md transition-shadow">
+
+            <!-- Title tab -->
+            <div class="bg-[#003262] px-5 py-3">
+                <h2 class="text-sm font-bold text-white leading-snug">${job.title}</h2>
+            </div>
+
+            <!-- Institution / badges -->
+            <div class="px-5 pt-4 pb-4">
+                <div class="flex flex-wrap gap-1.5 mb-3">
+                    <span class="badge ${instCls}">${job.institution_type || 'Unknown'}</span>
+                    <span class="badge ${trackCls}">${job.track_type || 'Unknown'}</span>
+                </div>
+
+                <p class="text-sm font-medium text-gray-800">${job.institution}</p>
+                ${job.department ? `<p class="text-xs text-gray-500">${job.department}</p>` : ''}
+                ${location ? `<p class="mt-1 text-xs text-gray-500 flex items-center gap-1">
+                    <svg class="w-3 h-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                    ${location}
+                </p>` : ''}
+            </div>
+
+            <!-- Details -->
+            <div class="px-5 pb-4 flex-1 space-y-3 text-xs text-gray-600 border-t border-gray-100 pt-4">
+
+                ${salary ? `<div class="flex items-center gap-2">
+                    <svg class="w-3.5 h-3.5 text-gray-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    <span class="font-medium text-gray-700">${salary}</span>
+                </div>` : ''}
+
+                <div class="grid grid-cols-3 gap-2">
+                    ${openDate ? `<div><p class="text-gray-400 uppercase tracking-wide text-[10px] font-semibold">Posted</p><p class="font-medium text-gray-700 mt-0.5">${openDate}</p></div>` : ''}
+                    <div><p class="text-gray-400 uppercase tracking-wide text-[10px] font-semibold">Deadline</p><p class="font-medium ${job.deadline ? 'text-gray-700' : 'text-emerald-600'} mt-0.5">${deadline}</p></div>
+                    ${job.start_date ? `<div><p class="text-gray-400 uppercase tracking-wide text-[10px] font-semibold">Start</p><p class="font-medium text-gray-700 mt-0.5">${job.start_date}</p></div>` : ''}
+                </div>
+
+                ${materials ? `<div>
+                    <p class="text-gray-400 uppercase tracking-wide text-[10px] font-semibold mb-1">Application Materials</p>
+                    ${materials}
+                </div>` : ''}
+
+            </div>
+
+            <!-- Apply button -->
+            ${job.apply_url ? `<div class="px-5 pb-5 pt-3">
+                <a href="${job.apply_url}" target="_blank" rel="noopener noreferrer"
+                   class="block w-full text-center bg-[#003262] hover:bg-[#00264d] text-white text-sm font-semibold py-2.5 rounded-xl transition-colors">
+                    Apply &rarr;
+                </a>
+            </div>` : ''}
+
+        </div>`;
+    }
+
+    let allJobs = [];
+
+    function render() {
+        const trackVal = document.getElementById('filter-track').value;
+        const instVal  = document.getElementById('filter-inst-type').value;
+
+        const filtered = allJobs.filter(j => {
+            if (trackVal && j.track_type !== trackVal) return false;
+            if (instVal  && j.institution_type !== instVal)  return false;
+            return true;
+        });
+
+        const grid = document.getElementById('job-grid');
+        const empty = document.getElementById('empty-state');
+        const count = document.getElementById('job-count');
+
+        grid.innerHTML = filtered.map(buildCard).join('');
+        empty.classList.toggle('hidden', filtered.length > 0);
+        count.textContent = `${filtered.length} listing${filtered.length !== 1 ? 's' : ''}`;
+    }
+
+    document.getElementById('filter-track').addEventListener('change', render);
+    document.getElementById('filter-inst-type').addEventListener('change', render);
+    document.getElementById('btn-clear').addEventListener('click', () => {
+        document.getElementById('filter-track').value = '';
+        document.getElementById('filter-inst-type').value = '';
+        render();
+    });
+
+    fetch('jobs.json')
+        .then(r => r.json())
+        .then(data => {
+            allJobs = data;
+            document.getElementById('loading-state').classList.add('hidden');
+            render();
+        })
+        .catch(() => {
+            document.getElementById('loading-state').textContent = 'Could not load listings.';
+        });
+    </script>
+
+</body>
+</html>
