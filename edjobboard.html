@@ -188,15 +188,19 @@
         return `
         <div class="bg-white rounded-2xl border border-gray-200 shadow-sm flex flex-col overflow-hidden hover:shadow-md transition-shadow">
 
-            <!-- Header band -->
-            <div class="px-5 pt-5 pb-4">
+            <!-- Title tab -->
+            <div class="bg-[#003262] px-5 py-3">
+                <h2 class="text-sm font-bold text-white leading-snug">${job.title}</h2>
+            </div>
+
+            <!-- Institution / badges -->
+            <div class="px-5 pt-4 pb-4">
                 <div class="flex flex-wrap gap-1.5 mb-3">
                     <span class="badge ${instCls}">${job.institution_type || 'Unknown'}</span>
                     <span class="badge ${trackCls}">${job.track_type || 'Unknown'}</span>
                 </div>
 
-                <h2 class="text-base font-bold text-[#003262] leading-snug">${job.title}</h2>
-                <p class="mt-0.5 text-sm font-medium text-gray-700">${job.institution}</p>
+                <p class="text-sm font-medium text-gray-800">${job.institution}</p>
                 ${job.department ? `<p class="text-xs text-gray-500">${job.department}</p>` : ''}
                 ${location ? `<p class="mt-1 text-xs text-gray-500 flex items-center gap-1">
                     <svg class="w-3 h-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
