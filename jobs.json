@@ -65,7 +65,7 @@
     },
     "salary": {
       "min": 135000,
-      "max": 275000,
+      "max": 150000,
       "currency": "USD",
       "period": "annual"
     },
