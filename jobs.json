@@ -51,5 +51,34 @@
       "Three publications demonstrating research focus (combined PDF)",
       "Three references (names and contact info; letters requested if advanced)"
     ]
+  },
+  {
+    "id": "stanford-gse-ethnic-studies-open-rank-2026",
+    "title": "Open Rank Faculty Position in K-12 Ethnic Studies Education",
+    "institution": "Stanford University",
+    "department": "Graduate School of Education",
+    "institution_type": "R1",
+    "track_type": "Open Rank (Tenure Track)",
+    "location": {
+      "city": "Stanford",
+      "state": "CA"
+    },
+    "salary": {
+      "min": 135000,
+      "max": 275000,
+      "currency": "USD",
+      "period": "annual"
+    },
+    "open_date": "2026-03-20",
+    "start_date": null,
+    "deadline": "2026-08-20",
+    "apply_url": "https://facultypositions.stanford.edu/jobs/open-rank-faculty-position-in-k-12-ethnic-studies-education-stanford-university-california-united-states",
+    "application_materials": [
+      "Cover letter",
+      "Research and teaching statement (3 pages max)",
+      "Curriculum vitae",
+      "Three scholarly publications and/or well-developed papers",
+      "Three references (letters requested upon submission for non-tenured applicants; at later stage for tenured applicants)"
+    ]
   }
 ]
