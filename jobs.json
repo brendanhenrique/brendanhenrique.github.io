@@ -1,0 +1,25 @@
+[
+  {
+    "id": "jhu-nrcae-postdoc-2026",
+    "title": "Postdoctoral Fellow - NRCAE",
+    "institution": "Johns Hopkins University",
+    "department": "School of Education",
+    "institution_type": "R1",
+    "track_type": "Postdoc",
+    "location": {
+      "city": "Baltimore",
+      "state": "MD"
+    },
+    "salary": {
+      "min": 63480,
+      "max": 77076,
+      "currency": "USD",
+      "period": "annual"
+    },
+    "open_date": "2026-04-28",
+    "start_date": "Fall 2026",
+    "deadline": null,
+    "apply_url": "https://dossier.interfolio.com/apply/185592",
+    "application_materials": ["Research interest proposal", "Letters of recommendation"]
+  }
+]
