@@ -1,115 +1,250 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brendan Henrique | Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brendan Henrique | Portfolio</title>
 
-    <meta property="og:title" content="Brendan Henrique | Academic Portfolio">
-    <meta property="og:description" content="PhD Candidate in Critical CS Education and Learning Sciences at UC Berkeley.">
-    <meta property="og:image" content="https://placehold.co/1200x630/003262/FFFFFF?text=Brendan+Henrique">
-    <meta property="og:url" content="http://brendanhenrique.com">
-    <meta name="twitter:card" content="summary_large_image">
+<meta property="og:title" content="Brendan Henrique | Academic Portfolio">
+<meta property="og:description" content="PhD Candidate in Critical CS Education and Learning Sciences at UC Berkeley.">
+<meta property="og:image" content="https://placehold.co/1200x630/003262/FFFFFF?text=Brendan+Henrique">
+<meta property="og:url" content="http://brendanhenrique.com">
+<meta name="twitter:card" content="summary_large_image">
 
-    <script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Inter', sans-serif; }
-    </style>
+<script data-goatcounter="https://brendanhenrique.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
 
-    <script data-goatcounter="https://brendanhenrique.goatcounter.com/count"
-            async src="//gc.zgo.at/count.js"></script>
+<style>
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; }
+  ::selection { background: #FDB515; color: #211E1A; }
+  @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+
+  @media (max-width: 860px) {
+    .bh-hero-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+    .bh-hero-photo { order: -1; }
+    .bh-h1 { font-size: 50px !important; }
+  }
+  @media (max-width: 700px) {
+    .bh-project-grid { grid-template-columns: 1fr !important; }
+    .bh-pub-row { grid-template-columns: 1fr !important; gap: 10px !important; }
+    .bh-cv-grid { grid-template-columns: 1fr !important; }
+    .bh-diss-grid { grid-template-columns: 1fr !important; gap: 10px !important; }
+    .bh-nav-links { gap: 18px !important; }
+    .bh-footer { align-items: flex-start !important; }
+  }
+  @media (max-width: 480px) {
+    .bh-h1 { font-size: 40px !important; }
+    .bh-sub { font-size: 20px !important; }
+    header, section > div, footer { padding-left: 20px !important; padding-right: 20px !important; }
+    nav > div { padding-left: 20px !important; padding-right: 20px !important; }
+  }
+</style>
 </head>
+<body>
+<div style="background:#F6F3EC; color:#211E1A; font-family:'Public Sans',sans-serif; -webkit-font-smoothing:antialiased; min-height:100vh; line-height:1.6;">
 
-<body class="bg-gray-50 text-gray-800">
+  <!-- NAV -->
+  <nav style="position:sticky; top:0; z-index:50; background:rgba(246,243,236,0.82); backdrop-filter:blur(10px); border-bottom:1px solid #E4DECF;">
+    <div style="max-width:1080px; margin:0 auto; padding:0 32px; height:68px; display:flex; align-items:center; justify-content:space-between;">
+      <a href="#top" style="font-family:'Newsreader',serif; font-size:21px; font-weight:600; color:#003262; text-decoration:none; letter-spacing:-0.01em;">Brendan Henrique</a>
+      <div class="bh-nav-links" style="display:flex; align-items:center; gap:30px;">
+        <a href="#research" style="font-size:14.5px; font-weight:500; color:#5C5548; text-decoration:none; letter-spacing:0.01em;">Research</a>
+        <a href="#publications" style="font-size:14.5px; font-weight:500; color:#5C5548; text-decoration:none;">Publications</a>
+        <a href="#cv" style="font-size:14.5px; font-weight:500; color:#5C5548; text-decoration:none;">CV</a>
+        <a href="#contact" style="font-size:14.5px; font-weight:500; color:#5C5548; text-decoration:none;">Contact</a>
+      </div>
+    </div>
+  </nav>
 
-    <nav class="bg-white/90 backdrop-blur-md sticky top-0 z-10 border-b border-gray-200">
-        <div class="max-w-4xl mx-auto px-6">
-            <div class="flex justify-between items-center h-16">
-                <a href="index.html" class="text-lg font-bold text-[#003262]">Brendan Henrique</a>
-
-                <div class="hidden sm:flex items-center space-x-6 text-gray-600">
-                    <a href="index.html" class="font-semibold text-[#003262]">Home</a>
-                    <a href="publications.html" class="hover:text-[#003262] transition-colors">Publications</a>
-                    <a href="cv.html" class="hover:text-[#003262] transition-colors">CV</a>
-                    <a href="teaching.html" class="hover:text-[#003262] transition-colors">Teaching</a>
-                    <a href="about.html" class="hover:text-[#003262] transition-colors">About Me</a>
-                    <a href="news.html" class="hover:text-[#003262] transition-colors">News</a>
-                </div>
-
-                <div class="sm:hidden flex items-center">
-                    <button id="mobile-menu-button" class="text-gray-600 hover:text-[#003262] focus:outline-none">
-                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-                        </svg>
-                    </button>
-                </div>
-            </div>
+  <!-- HERO -->
+  <header id="top" style="max-width:1080px; margin:0 auto; padding:96px 32px 72px;">
+    <div class="bh-hero-grid" style="display:grid; grid-template-columns:1.55fr 1fr; gap:64px; align-items:center;">
+      <div style="animation:rise 0.7s ease both;">
+        <div style="display:flex; align-items:center; gap:12px; margin-bottom:26px;">
+          <span style="width:26px; height:2px; background:#FDB515; display:inline-block;"></span>
+          <span style="font-size:12.5px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:#8A8272;">PhD Candidate &middot; UC Berkeley School of Education &middot; On the market 2026&ndash;27</span>
         </div>
-
-        <div id="mobile-menu" class="hidden sm:hidden bg-white border-b border-gray-200 absolute w-full shadow-lg">
-            <div class="px-6 pt-2 pb-4 space-y-3 shadow-sm">
-                <a href="index.html" class="block font-semibold text-[#003262]">Home</a>
-                <a href="publications.html" class="block text-gray-600 hover:text-[#003262] transition-colors">Publications</a>
-                <a href="cv.html" class="block text-gray-600 hover:text-[#003262] transition-colors">CV</a>
-                <a href="teaching.html" class="block text-gray-600 hover:text-[#003262] transition-colors">Teaching</a>
-                <a href="about.html" class="block text-gray-600 hover:text-[#003262] transition-colors">About Me</a>
-                <a href="news.html" class="block text-gray-600 hover:text-[#003262] transition-colors">News</a>
-            </div>
+        <h1 class="bh-h1" style="font-family:'Newsreader',serif; font-weight:500; font-size:66px; line-height:1.02; letter-spacing:-0.02em; margin:0 0 24px; color:#211E1A;">Brendan<br>Henrique</h1>
+        <p class="bh-sub" style="font-family:'Newsreader',serif; font-size:23px; line-height:1.45; color:#003262; margin:0 0 22px; max-width:34ch; font-weight:400;">I study how teachers learn to teach computer science, and what shifts when computing is framed as sociopolitical.</p>
+        <p style="font-size:16px; color:#5C5548; margin:0 0 34px; max-width:52ch;">My research sits at the intersection of the learning sciences, computer science education, and teacher education. I focus on critically conscious CS education, studying the ways pre-service teachers navigate critical perspectives of computing inside a CS teacher preparation program. My dissertation is chaired by Prof. Michelle Wilkerson at the Berkeley School of Education.</p>
+        <div style="display:flex; flex-wrap:wrap; gap:14px; align-items:center;">
+          <a href="#cv" style="display:inline-flex; align-items:center; gap:9px; background:#003262; color:#fff; font-size:15px; font-weight:600; padding:13px 24px; border-radius:2px; text-decoration:none;">View CV
+            <span style="font-size:16px; line-height:1;">&rarr;</span></a>
+          <a href="#research" style="display:inline-flex; align-items:center; gap:9px; background:transparent; color:#211E1A; font-size:15px; font-weight:600; padding:13px 22px; border-radius:2px; text-decoration:none; border:1px solid #CFC7B4;">Explore the research</a>
         </div>
-    </nav>
-
-    <main class="w-full max-w-4xl mx-auto py-20 md:py-32 px-6">
-        <div class="flex flex-col md:flex-row md:space-x-12 space-y-12 md:space-y-0">
-            <div class="w-full md:max-w-3xl mx-auto">
-                <div class="flex flex-col sm:flex-row items-center gap-6 text-center sm:text-left">
-                    <img src="https://placehold.co/128x128/e2e8f0/334155?text=BH" 
-                         alt="Brendan Henrique"
-                         class="w-32 h-32 rounded-full shadow-lg flex-shrink-0">
-
-                    <div>
-                        <h1 class="text-4xl md:text-5xl font-bold text-[#003262] tracking-tight">
-                            Brendan Henrique
-                        </h1>
-                        <p class="mt-4 text-lg md:text-xl text-gray-600">
-                            Critical CS Education and Learning Sciences | UC Berkeley
-                        </p>
-                    </div>
-                </div>
-
-                <p class="mt-8 leading-relaxed text-gray-700">
-                    Brendan is a PhD candidate at the Computing, Reasoning, and Expression Lab at the Berkeley School of Education and is advised by Michelle Wilkerson. His research focuses on critical approaches to computing education as well as the intersection of computing and STEM education. He was a science teacher in West Contra Costa Unified School District. He holds a M.A. in Urban Education from Loyola Marymount University and a B.A. in Cognitive Science from the University of California, Berkeley.
-                </p>
-
-                <div class="mt-8 flex items-center justify-center sm:justify-start space-x-5">
-                    <a href="https://scholar.google.com/citations?user=TiRFPoMAAAAJ&hl=en&oi=ao"
-                       target="_blank" rel="noopener noreferrer"
-                       class="text-gray-500 hover:opacity-75 transition-opacity duration-300">
-                        <span class="sr-only">Google Scholar</span>
-                        <img src="google-scholar-logo.png" class="w-8 h-8" alt="Google Scholar">
-                    </a>
-
-                    <a href="https://www.linkedin.com/in/brendanhenrique/"
-                       target="_blank" rel="noopener noreferrer"
-                       class="text-gray-500 hover:text-[#FDB515] transition-colors duration-300">
-                        <span class="sr-only">LinkedIn</span>
-                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                        </svg>
-                    </a>
-                </div>
-            </div>
+      </div>
+      <div class="bh-hero-photo" style="display:flex; justify-content:center; animation:rise 0.9s ease both;">
+        <div style="position:relative;">
+          <div style="position:absolute; inset:14px -14px -14px 14px; border:1px solid #CFC7B4; border-radius:3px;"></div>
+          <!-- Swap this placeholder for <img src="headshot.jpg" alt="Brendan Henrique"> once a photo is ready -->
+          <div style="position:relative; width:290px; max-width:100%; height:360px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; text-align:center; padding:24px; border-radius:3px; border:1.5px dashed #CFC7B4; background:#F1ECE0; color:#8A8272;">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/>
+              <path d="m21 15-5-5L5 21"/>
+            </svg>
+            <span style="font-size:13px; font-weight:500; letter-spacing:0.01em;">Headshot or logo coming soon</span>
+          </div>
         </div>
-    </main>
+      </div>
+    </div>
+  </header>
 
-    <footer class="text-center py-10 text-sm text-gray-500">
-        <p>&copy; 2026 Brendan Henrique. All rights reserved.</p>
-    </footer>
+  <!-- RESEARCH -->
+  <section id="research" style="border-top:1px solid #E4DECF; background:#F1ECE0;">
+    <div style="max-width:1080px; margin:0 auto; padding:72px 32px 80px;">
+      <div style="display:flex; align-items:baseline; gap:16px; margin-bottom:44px;">
+        <span style="font-family:'Newsreader',serif; font-size:16px; color:#B0A88F; font-style:italic;">01</span>
+        <h2 style="font-family:'Newsreader',serif; font-weight:500; font-size:38px; letter-spacing:-0.015em; margin:0; color:#211E1A;">Research Projects</h2>
+      </div>
+      <p style="font-size:18px; color:#5C5548; max-width:66ch; margin:0 0 52px; line-height:1.6;">The throughline of my research is the intersection of the learning sciences and computer science education. My dissertation examines how pre-service teachers come to see computing critically. Through research apprenticeships, I have also studied undergraduate introductory data science and computational modeling in science classrooms.</p>
 
-    <script src="nav.js"></script>
+      <div class="bh-diss-grid" style="display:grid; grid-template-columns:150px 1fr; gap:32px; align-items:baseline; margin:0 0 46px; padding:26px 30px; background:#F6F3EC; border-left:3px solid #FDB515;">
+        <div style="font-size:12.5px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#8A8272;">Dissertation</div>
+        <div>
+          <p style="font-family:'Newsreader',serif; font-size:21px; line-height:1.35; color:#003262; margin:0 0 10px;">Ideologies, Motivations, and Identities in Critical Computer Science Teacher Education</p>
+          <p style="font-size:14.5px; color:#5C5548; margin:0;">Committee: Michelle Wilkerson (Chair), Lisa Yan, Thomas Philip &middot; Advanced to candidacy May 2026 &middot; Expected completion May 2027</p>
+        </div>
+      </div>
 
+      <div class="bh-project-grid" style="display:grid; grid-template-columns:repeat(3,1fr); gap:2px; background:#E4DECF; border:1px solid #E4DECF;">
+        <div style="background:#F6F3EC; padding:36px 30px;">
+          <div style="font-family:'Newsreader',serif; font-size:15px; font-style:italic; color:#FDB515; margin-bottom:18px;">Project 01 [2022&ndash;Present]</div>
+          <h3 style="font-family:'Newsreader',serif; font-weight:600; font-size:23px; line-height:1.2; margin:0 0 10px; color:#003262;">Critically Conscious CS Teacher Education</h3>
+          <p style="font-size:13px; color:#8A8272; margin:0 0 18px; line-height:1.5;">Dissertation Research<br>Chair: Michelle Wilkerson</p>
+          <p style="font-size:15px; color:#5C5548; margin:0; line-height:1.62;">I designed, developed, taught, and now research a CS teacher preparation course built around critical perspectives of computing. I trace teachers' sensemaking from pre-service coursework into their own classrooms, with follow-up interviews across their first three years of teaching.</p>
+        </div>
+        <div style="background:#F6F3EC; padding:36px 30px;">
+          <div style="font-family:'Newsreader',serif; font-size:15px; font-style:italic; color:#FDB515; margin-bottom:18px;">Project 02 [2025&ndash;2026]</div>
+          <h3 style="font-family:'Newsreader',serif; font-weight:600; font-size:23px; line-height:1.2; margin:0 0 10px; color:#003262;">Social Science Informed Data Science Education</h3>
+          <p style="font-size:13px; color:#8A8272; margin:0 0 18px; line-height:1.5;">Graduate Student Researcher<br>P.I. Lisa Yan<br>(NSF IUSE CUE-T)</p>
+          <p style="font-size:15px; color:#5C5548; margin:0; line-height:1.62;">This project examines the design and implementation of a social science informed introductory data science course, and the role such courses can play in the undergraduate curriculum. I led a curriculum crosswalk across institutions, conducted classroom observations, observed cross-institutional instructor meetings, and supervised two undergraduate researchers.</p>
+        </div>
+        <div style="background:#F6F3EC; padding:36px 30px;">
+          <div style="font-family:'Newsreader',serif; font-size:15px; font-style:italic; color:#FDB515; margin-bottom:18px;">Project 03 [2023&ndash;2025]</div>
+          <h3 style="font-family:'Newsreader',serif; font-weight:600; font-size:23px; line-height:1.2; margin:0 0 10px; color:#003262;">Scientific and Computational Modeling with Data (MoDa)</h3>
+          <p style="font-size:13px; color:#8A8272; margin:0 0 18px; line-height:1.5;">Graduate Student Researcher<br>P.I.s Michelle Wilkerson, Tamar Fuhrmann,<br>Aditi Wagh &amp; Paulo Blikstein<br>(NSF From Access to Sustainability)</p>
+          <p style="font-size:15px; color:#5C5548; margin:0; line-height:1.62;">MoDa is a browser-based, block-based platform where students code computational models of scientific phenomena and compare those models against data. I led the design and classroom data collection for the <a href="https://moda.education/?journeyId=3119&amp;taskId=3117" target="_blank" rel="noopener noreferrer" style="color:#003262; font-weight:600; text-decoration:none; border-bottom:1px solid #FDB515;">photosynthesis unit&nbsp;&#8599;</a>.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PUBLICATIONS -->
+  <section id="publications" style="border-top:1px solid #E4DECF;">
+    <div style="max-width:1080px; margin:0 auto; padding:72px 32px 80px;">
+      <div style="display:flex; align-items:baseline; gap:16px; margin-bottom:44px;">
+        <span style="font-family:'Newsreader',serif; font-size:16px; color:#B0A88F; font-style:italic;">02</span>
+        <h2 style="font-family:'Newsreader',serif; font-weight:500; font-size:38px; letter-spacing:-0.015em; margin:0; color:#211E1A;">Publications</h2>
+      </div>
+
+      <div class="bh-pub-row" style="display:grid; grid-template-columns:180px 1fr; gap:36px; padding:28px 0 30px; border-top:1px solid #D8D0BE;">
+        <div style="font-size:12.5px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#8A8272; padding-top:3px;">Peer-Reviewed Journal Articles</div>
+        <div style="display:flex; flex-direction:column; gap:20px;">
+          <p style="margin:0; font-size:15.5px; line-height:1.62; color:#4A4438;">Fuhrmann, T., Rosenbaum, L. F., Eloy, A., Wagh, A., <b style="color:#003262; font-weight:600;">Henrique, B.</b>, Blikstein, P., &amp; Wilkerson, M. H. (2026). Designing MoDa: A new tool for science learning through data-based computational modeling. <i>International Journal of Child-Computer Interaction, 48</i>, 100819. <a href="https://doi.org/10.1016/j.ijcci.2026.100819" target="_blank" rel="noopener noreferrer" style="color:#003262; font-weight:600; text-decoration:none; border-bottom:1px solid #FDB515; white-space:nowrap;">Link&nbsp;&#8599;</a></p>
+        </div>
+      </div>
+
+      <div class="bh-pub-row" style="display:grid; grid-template-columns:180px 1fr; gap:36px; padding:28px 0 30px; border-top:1px solid #D8D0BE;">
+        <div style="font-size:12.5px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#8A8272; padding-top:3px;">Conference Proceedings: Papers</div>
+        <div style="display:flex; flex-direction:column; gap:20px;">
+          <p style="margin:0; font-size:15.5px; line-height:1.62; color:#4A4438;">Wagh, A., Rosenbaum, L. F., Eloy, A., Fuhrmann, T., <b style="color:#003262; font-weight:600;">Henrique, B.</b>, Blikstein, P., &amp; Wilkerson, M. H. (2025). Designing for discourse: Enacting responsive teaching through code reflections in a computational modeling unit [Long paper]. In <i>Proceedings of the 19th International Conference of the Learning Sciences &ndash; ICLS 2025</i> (pp. 377&ndash;385). ISLS. <a href="https://doi.org/10.22318/icls2025.200377" target="_blank" rel="noopener noreferrer" style="color:#003262; font-weight:600; text-decoration:none; border-bottom:1px solid #FDB515; white-space:nowrap;">Link&nbsp;&#8599;</a></p>
+          <p style="margin:0; font-size:15.5px; line-height:1.62; color:#4A4438;"><b style="color:#003262; font-weight:600;">Henrique, B.</b> (2025). Exploring critical CS teacher education program design through a science and technology studies approach [Full paper]. In <i>Proceedings of the 56th ACM Technical Symposium on Computer Science Education V. 1</i> (pp. 478&ndash;484). ACM. <a href="https://doi.org/10.1145/3641554.3701903" target="_blank" rel="noopener noreferrer" style="color:#003262; font-weight:600; text-decoration:none; border-bottom:1px solid #FDB515; white-space:nowrap;">Link&nbsp;&#8599;</a></p>
+          <p style="margin:0; font-size:15.5px; line-height:1.62; color:#4A4438;"><b style="color:#003262; font-weight:600;">Henrique, B.</b> (2024). &ldquo;An act of a revolution&rdquo;: Critical learning trajectories in a pre-service teacher computer science course [Short paper]. In <i>Proceedings of the 18th International Conference of the Learning Sciences &ndash; ICLS 2024</i> (pp. 1802&ndash;1805). ISLS. <a href="https://doi.org/10.22318/icls2024.115107" target="_blank" rel="noopener noreferrer" style="color:#003262; font-weight:600; text-decoration:none; border-bottom:1px solid #FDB515; white-space:nowrap;">Link&nbsp;&#8599;</a></p>
+        </div>
+      </div>
+
+      <div class="bh-pub-row" style="display:grid; grid-template-columns:180px 1fr; gap:36px; padding:28px 0 30px; border-top:1px solid #D8D0BE;">
+        <div style="font-size:12.5px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#8A8272; padding-top:3px;">Conference Proceedings: Posters &amp; Extended Abstracts</div>
+        <div style="display:flex; flex-direction:column; gap:20px;">
+          <p style="margin:0; font-size:15.5px; line-height:1.62; color:#4A4438;"><b style="color:#003262; font-weight:600;">Henrique, B.</b>, Yan, L., Cano Low, F. G., &amp; Arriaga, F. (2026, June). <i>IUSE-CUE: A collaboratively designed, interdisciplinary introduction to computational thinking in data science</i> [Poster, in press]. ASEE Annual Conference &amp; Exposition: NSF Grantee Poster Session, Charlotte, NC.</p>
+          <p style="margin:0; font-size:15.5px; line-height:1.62; color:#4A4438;">Fuhrmann, T., <b style="color:#003262; font-weight:600;">Henrique, B.</b>, &amp; Blikstein, P. (2026, June). <i>When code shapes scientific language: Speaking photosynthesis in code</i> [Poster, in press]. ISLS Annual Meeting, Irvine, CA.</p>
+          <p style="margin:0; font-size:15.5px; line-height:1.62; color:#4A4438;"><b style="color:#003262; font-weight:600;">Henrique, B.</b>, &amp; Fischer, K. (2026). A statewide analysis of ethics and social impact in the CS teacher preparation pipeline [Poster]. In <i>Proceedings of the 57th ACM Technical Symposium on Computer Science Education V. 2</i> (pp. 1355&ndash;1356). ACM. <a href="https://doi.org/10.1145/3770761.3777352" target="_blank" rel="noopener noreferrer" style="color:#003262; font-weight:600; text-decoration:none; border-bottom:1px solid #FDB515; white-space:nowrap;">Link&nbsp;&#8599;</a></p>
+          <p style="margin:0; font-size:15.5px; line-height:1.62; color:#4A4438;"><b style="color:#003262; font-weight:600;">Henrique, B.</b> (2024). Exploring K&ndash;12 teachers' trajectories of engagement with critically conscious computing [Poster, Graduate Student Research Competition]. In <i>Proceedings of the 55th ACM Technical Symposium on Computer Science Education V. 2</i> (p. 1880). ACM. <span style="display:inline-block; font-size:10.5px; font-weight:700; letter-spacing:0.05em; text-transform:uppercase; color:#8A6D00; background:#FDB515; padding:1px 7px; border-radius:2px;">First place</span> <a href="https://doi.org/10.1145/3626253.3635415" target="_blank" rel="noopener noreferrer" style="color:#003262; font-weight:600; text-decoration:none; border-bottom:1px solid #FDB515; white-space:nowrap;">Link&nbsp;&#8599;</a></p>
+        </div>
+      </div>
+
+      <div class="bh-pub-row" style="display:grid; grid-template-columns:180px 1fr; gap:36px; padding:28px 0 30px; border-top:1px solid #D8D0BE;">
+        <div style="font-size:12.5px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#8A8272; padding-top:3px;">Peer-Reviewed Conference Presentations</div>
+        <div style="display:flex; flex-direction:column; gap:20px;">
+          <p style="margin:0; font-size:15.5px; line-height:1.62; color:#4A4438;">Fuhrmann, T., &amp; <b style="color:#003262; font-weight:600;">Henrique, B.</b> (2026, August). From code to chloroplasts: Modeling as a language for mechanistic reasoning in science. In <i>Mechanistic reasoning in biology</i> [Symposium]. ERIDOB, Ljubljana, Slovenia.</p>
+          <p style="margin:0; font-size:15.5px; line-height:1.62; color:#4A4438;">Fuhrmann, T., <b style="color:#003262; font-weight:600;">Henrique, B.</b>, Eloy, A., Rosenbaum, L. F., Wagh, A., Blikstein, P., &amp; Wilkerson, M. H. (2026, April). <i>From code to chloroplasts: Speaking about photosynthesis through computational modeling</i> [Paper presentation]. NARST Annual International Conference, Seattle, WA.</p>
+          <p style="margin:0; font-size:15.5px; line-height:1.62; color:#4A4438;"><b style="color:#003262; font-weight:600;">Henrique, B.</b> (2026, April). <i>Designated identity narratives: Teacher philosophy statements in critical CS education</i> [E-Lightning session]. AERA Annual Meeting, Los Angeles, CA.</p>
+          <p style="margin:0; font-size:15.5px; line-height:1.62; color:#4A4438;"><b style="color:#003262; font-weight:600;">Henrique, B.</b> (2024, April). <i>Understanding how elementary school pre-service teachers integrate CS concepts into their teaching practice</i> [Roundtable]. AERA Annual Meeting, Philadelphia, PA.</p>
+          <p style="margin:0; font-size:15.5px; line-height:1.62; color:#4A4438;">Fuhrmann, T., &amp; <b style="color:#003262; font-weight:600;">Henrique, B.</b> (2023, October). <i>MoDa: Exploring computational modeling from a constructionist perspective</i> [Workshop]. Constructionism 2023, New York, NY.</p>
+          <p style="margin:0; font-size:15.5px; line-height:1.62; color:#4A4438;"><b style="color:#003262; font-weight:600;">Henrique, B.</b>, &amp; Whittle, R. (2019, March). <i>Voicing the local: University-community partnerships in the digital age</i> [Conference session]. UC Links International Conference, Berkeley, CA. <a href="https://uclinks.berkeley.edu/uc-links-international-conferences/2019-uc-links-international-conference" target="_blank" rel="noopener noreferrer" style="color:#003262; font-weight:600; text-decoration:none; border-bottom:1px solid #FDB515; white-space:nowrap;">Link&nbsp;&#8599;</a></p>
+        </div>
+      </div>
+
+      <div class="bh-pub-row" style="display:grid; grid-template-columns:180px 1fr; gap:36px; padding:28px 0 30px; border-top:1px solid #D8D0BE;">
+        <div style="font-size:12.5px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#8A8272; padding-top:3px;">Book Reviews &amp; Other Publications</div>
+        <div style="display:flex; flex-direction:column; gap:20px;">
+          <p style="margin:0; font-size:15.5px; line-height:1.62; color:#4A4438;"><b style="color:#003262; font-weight:600;">Henrique, B.</b>, Roberto, C., &amp; Wilkerson, M. H. (2023). Who creates our computational worlds? A review of <i>Critically Conscious Computing: Methods for Secondary Education</i>. <i>International Journal of Child-Computer Interaction, 35</i>, 100546. <a href="https://doi.org/10.1016/j.ijcci.2022.100546" target="_blank" rel="noopener noreferrer" style="color:#003262; font-weight:600; text-decoration:none; border-bottom:1px solid #FDB515; white-space:nowrap;">Link&nbsp;&#8599;</a></p>
+          <p style="margin:0; font-size:15.5px; line-height:1.62; color:#4A4438;"><b style="color:#003262; font-weight:600;">Henrique, B.</b>, Altamirano, D., &amp; Krikorian, M. (2021). <i>The effect of labor differences in charter and traditional public schools on teacher attitudes and beliefs</i>. Graduate Library Research Awards. Loyola Marymount University. <a href="https://digitalcommons.lmu.edu/glra/awards/2021/4" target="_blank" rel="noopener noreferrer" style="color:#003262; font-weight:600; text-decoration:none; border-bottom:1px solid #FDB515; white-space:nowrap;">Link&nbsp;&#8599;</a></p>
+        </div>
+      </div>
+
+      <div class="bh-pub-row" style="display:grid; grid-template-columns:180px 1fr; gap:36px; padding:28px 0 30px; border-top:1px solid #D8D0BE; border-bottom:1px solid #D8D0BE;">
+        <div style="font-size:12.5px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#8A8272; padding-top:3px;">Media Coverage</div>
+        <div style="display:flex; flex-direction:column; gap:20px;">
+          <p style="margin:0; font-size:15.5px; line-height:1.62; color:#4A4438;">Schwartz, S. (2021, November 23). COVID-19 is a science lesson waiting to happen. <i>Education Week</i>. <a href="https://www.edweek.org/teaching-learning/covid-19-is-a-science-lesson-waiting-to-happen/2021/11" target="_blank" rel="noopener noreferrer" style="color:#003262; font-weight:600; text-decoration:none; border-bottom:1px solid #FDB515; white-space:nowrap;">Link&nbsp;&#8599;</a></p>
+          <p style="margin:0; font-size:15.5px; line-height:1.62; color:#4A4438;">Johnson, S. (2020, December 15). One more challenge for California teachers in distance learning: All new science curriculum. <i>EdSource</i>. <a href="https://edsource.org/2020/one-more-challenge-for-teachers-in-distance-learning-all-new-science-curriculum/645101" target="_blank" rel="noopener noreferrer" style="color:#003262; font-weight:600; text-decoration:none; border-bottom:1px solid #FDB515; white-space:nowrap;">Link&nbsp;&#8599;</a></p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CV -->
+  <section id="cv" style="border-top:1px solid #E4DECF; background:#003262; color:#F6F3EC;">
+    <div style="max-width:1080px; margin:0 auto; padding:76px 32px 84px;">
+      <div class="bh-cv-grid" style="display:grid; grid-template-columns:1fr 1.15fr; gap:56px; align-items:center;">
+        <div>
+          <div style="display:flex; align-items:baseline; gap:16px; margin-bottom:26px;">
+            <span style="font-family:'Newsreader',serif; font-size:16px; color:#7FA0BE; font-style:italic;">03</span>
+            <h2 style="font-family:'Newsreader',serif; font-weight:500; font-size:38px; letter-spacing:-0.015em; margin:0; color:#fff;">Curriculum Vitae</h2>
+          </div>
+          <p style="font-size:16.5px; color:#C4D3E0; margin:0 0 30px; max-width:44ch; line-height:1.6;">A full record of my research, publications, teaching, awards, and service &mdash; last updated July 2026 for the 2026&ndash;27 academic job market.</p>
+          <div style="font-size:12.5px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#7FA0BE; margin:0 0 18px; padding-top:22px; border-top:1px solid #2E5680;">Highlights</div>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:18px 28px; margin:0 0 32px;">
+            <div><div style="font-family:'Newsreader',serif; font-size:15px; font-style:italic; color:#FDB515; margin-bottom:5px;">2026</div><p style="margin:0; font-size:14.5px; color:#C4D3E0; line-height:1.5;">SIGCSE Special Projects Grant, sole investigator ($5,000)</p></div>
+            <div><div style="font-family:'Newsreader',serif; font-size:15px; font-style:italic; color:#FDB515; margin-bottom:5px;">2026</div><p style="margin:0; font-size:14.5px; color:#C4D3E0; line-height:1.5;">ICER Doctoral Consortium</p></div>
+            <div><div style="font-family:'Newsreader',serif; font-size:15px; font-style:italic; color:#FDB515; margin-bottom:5px;">2024</div><p style="margin:0; font-size:14.5px; color:#C4D3E0; line-height:1.5;">First Place, SIGCSE Graduate Student Research Competition</p></div>
+            <div><div style="font-family:'Newsreader',serif; font-size:15px; font-style:italic; color:#FDB515; margin-bottom:5px;">2025</div><p style="margin:0; font-size:14.5px; color:#C4D3E0; line-height:1.5;">Single-author full paper published at SIGCSE TS</p></div>
+          </div>
+          <div style="display:flex; flex-wrap:wrap; gap:14px;">
+            <a href="https://brendanhenrique.github.io/newupdatedCV__public_website_.pdf" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:9px; background:#FDB515; color:#211E1A; font-size:15px; font-weight:700; padding:14px 26px; border-radius:2px; text-decoration:none;">Download PDF <span>&darr;</span></a>
+            <a href="https://scholar.google.com/citations?user=TiRFPoMAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:9px; background:transparent; color:#F6F3EC; font-size:15px; font-weight:600; padding:14px 24px; border-radius:2px; text-decoration:none; border:1px solid #3C6288;">Google Scholar</a>
+          </div>
+        </div>
+        <div style="background:#0A3D6E; border:1px solid #2E5680; border-radius:4px; padding:10px; box-shadow:0 24px 60px -20px rgba(0,0,0,0.5);">
+          <iframe src="https://brendanhenrique.github.io/newupdatedCV__public_website_.pdf#toolbar=0&view=FitH" title="Brendan Henrique CV" style="width:100%; height:520px; border:none; border-radius:2px; background:#fff; display:block;"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT / FOOTER -->
+  <footer id="contact" style="max-width:1080px; margin:0 auto; padding:76px 32px 60px;">
+    <div class="bh-footer" style="display:flex; flex-wrap:wrap; gap:40px; justify-content:space-between; align-items:flex-end;">
+      <div>
+        <p style="font-family:'Newsreader',serif; font-style:italic; font-size:22px; color:#8A8272; margin:0 0 10px;">Let's talk.</p>
+        <h2 style="font-family:'Newsreader',serif; font-weight:500; font-size:34px; line-height:1.3; letter-spacing:-0.015em; margin:0 0 26px; color:#211E1A; max-width:30ch;">I'm on the 2026&ndash;27 tenure-track market for schools of education.</h2>
+        <div style="display:flex; gap:22px; flex-wrap:wrap;">
+          <a href="https://scholar.google.com/citations?user=TiRFPoMAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener noreferrer" style="font-size:15px; font-weight:600; color:#003262; text-decoration:none; border-bottom:2px solid #FDB515; padding-bottom:2px;">Google Scholar</a>
+          <a href="https://www.linkedin.com/in/brendanhenrique/" target="_blank" rel="noopener noreferrer" style="font-size:15px; font-weight:600; color:#003262; text-decoration:none; border-bottom:2px solid transparent; padding-bottom:2px;">LinkedIn</a>
+        </div>
+      </div>
+      <p style="font-size:13px; color:#A39B88; margin:0;">&copy; 2026 Brendan Henrique &middot; UC Berkeley School of Education</p>
+    </div>
+  </footer>
+
+</div>
 </body>
 </html>
