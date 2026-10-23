@@ -205,12 +205,15 @@
             <div><div style="font-family:'Newsreader',serif; font-size:15px; font-style:italic; color:#FDB515; margin-bottom:5px;">2025</div><p style="margin:0; font-size:14.5px; color:#C4D3E0; line-height:1.5;">Single-author full paper published at SIGCSE TS</p></div>
           </div>
           <div style="display:flex; flex-wrap:wrap; gap:14px;">
-            <a href="https://brendanhenrique.github.io/newupdatedCV__public_website_.pdf" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:9px; background:#FDB515; color:#211E1A; font-size:15px; font-weight:700; padding:14px 26px; border-radius:2px; text-decoration:none;">Download PDF <span>&darr;</span></a>
+            <a href="newupdatedCV__public_website_.pdf" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:9px; background:#FDB515; color:#211E1A; font-size:15px; font-weight:700; padding:14px 26px; border-radius:2px; text-decoration:none;">Download PDF <span>&darr;</span></a>
             <a href="https://scholar.google.com/citations?user=TiRFPoMAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:9px; background:transparent; color:#F6F3EC; font-size:15px; font-weight:600; padding:14px 24px; border-radius:2px; text-decoration:none; border:1px solid #3C6288;">Google Scholar</a>
           </div>
         </div>
         <div style="background:#0A3D6E; border:1px solid #2E5680; border-radius:4px; padding:10px; box-shadow:0 24px 60px -20px rgba(0,0,0,0.5);">
-          <iframe src="https://brendanhenrique.github.io/newupdatedCV__public_website_.pdf#toolbar=0&view=FitH" title="Brendan Henrique CV" style="width:100%; height:520px; border:none; border-radius:2px; background:#fff; display:block;"></iframe>
+          <!-- Rendered with PDF.js: browsers (especially on mobile) often won't display a PDF inside an iframe -->
+          <div id="cv-preview" role="img" aria-label="Brendan Henrique CV" style="width:100%; height:520px; overflow-y:auto; border-radius:2px; background:#fff;">
+            <a href="newupdatedCV__public_website_.pdf" target="_blank" rel="noopener noreferrer" id="cv-preview-fallback" style="display:block; padding:24px; color:#003262; font-size:15px;">Open the CV (PDF)</a>
+          </div>
         </div>
       </div>
     </div>
@@ -232,5 +235,36 @@
   </footer>
 
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script>
+  (function() {
+    if (!window.pdfjsLib) return;
+    pdfjsLib.GlobalWorkerOptions.workerSrc =
+      'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+    const preview = document.getElementById('cv-preview');
+
+    pdfjsLib.getDocument('newupdatedCV__public_website_.pdf').promise.then(async function(pdf) {
+      const width = preview.clientWidth;
+      const dpr = window.devicePixelRatio || 1;
+      const pages = [];
+      for (let num = 1; num <= pdf.numPages; num++) {
+        const page = await pdf.getPage(num);
+        const viewport = page.getViewport({ scale: width / page.getViewport({ scale: 1 }).width });
+        const canvas = document.createElement('canvas');
+        canvas.width = viewport.width * dpr;
+        canvas.height = viewport.height * dpr;
+        canvas.style.width = viewport.width + 'px';
+        canvas.style.height = viewport.height + 'px';
+        canvas.style.display = 'block';
+        const ctx = canvas.getContext('2d');
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        await page.render({ canvasContext: ctx, viewport: viewport }).promise;
+        pages.push(canvas);
+      }
+      preview.replaceChildren(...pages);
+    });
+  })();
+</script>
 </body>
 </html>
